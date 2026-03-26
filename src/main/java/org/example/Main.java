@@ -13,10 +13,11 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         Database b = new Database();
         Connection connection = b.connect();
+        Scanner sc = new Scanner(System.in);
 
 //        Doctor doctor1 = new Doctor("Gabryel Duarte", "0610");
 //        Doctor doctor2 = new Doctor("Ana Beatriz", "061020");
-//        b.add(doctor1, connection);
+//        b.addDoctor(doctor1, connection);
 //        b.add(doctor2, connection);
 //
 //        Doctor doctor1 = new Doctor("Gabryel Duarte", "1530");
@@ -30,11 +31,6 @@ public class Main {
 
             System.out.println(m.getId() + ", " + m.getName() + ", " + m.getCrm());
         }
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Informe o ID que deseja excluir: ");
-        int id = sc.nextInt();
-        b.deleteDoctor(id, connection);
 
         b.disconnect(connection);
     }

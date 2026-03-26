@@ -3,7 +3,6 @@ package org.example.controller;
 import org.example.model.*;
 
 import javax.print.Doc;
-import java.net.ConnectException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +38,7 @@ public class Database {
         connection.close();
     }
 
-    public void add(Doctor doctor, Connection connection) throws SQLException {
+    public void addDoctor(Doctor doctor, Connection connection) throws SQLException {
         String sql = "insert into doctor(name, crm) values(?,?)";
         try{
             //prepara a string da variavel "sql" em um codigo sql;
@@ -64,7 +63,7 @@ public class Database {
         }
     }
 
-    public void update(Doctor doctor, Connection connection){
+    public void updateDoctor(Doctor doctor, Connection connection){
         String sql = "update doctor set name = ?, crm = ? where id = ?";
         try{
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -92,7 +91,6 @@ public class Database {
             //resultado da pesquisa no BD armazenadas nesa variavel;
             ResultSet rs = stmt.executeQuery();
 
-
             while(rs.next()){
                 Doctor doctor = new Doctor();
                 doctor.setId(rs.getInt("id"));
@@ -107,6 +105,34 @@ public class Database {
             System.out.println("Erro ao buscar os cadastros dos médicos.");
         }
         return doctors;
+    }
+
+    public Doctor searchForCrm(String crm, Connection connection){
+        String sql = "select id, nome, crm from doctor where crm = ?";
+        Doctor doctor = new Doctor();;
+
+        try{
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, crm);
+
+            ResultSet rs = stmt.executeQuery();
+
+            if(rs.next()){
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String crm2 = rs.getString("crm");
+                doctor.setId(id);
+                doctor.setName(name);
+                doctor.setCrm(crm2);
+            }
+
+            rs.close();
+            stmt.close();
+        }catch (SQLException e){
+            System.out.println("Erro ao pesquisar médico pelo CRM: " + e.getMessage());
+        }
+
+        return doctor;
     }
 
     public void deleteDoctor(int id, Connection connection){
@@ -128,22 +154,23 @@ public class Database {
             System.out.println("Não foi possível deletar o médico pelo ID.");
             e.printStackTrace();
         }
-
     }
 
-    public void add(Patient patient, Connection connection){
+
+
+    public void addDoctor(Patient patient, Connection connection){
         // codigo mysql atraves do java
     }
 
-    public void add(Address adress, Connection connection){
+    public void addDoctor(Address adress, Connection connection){
         // codigo mysql atraves do java
     }
 
-    public void add(Telephone telephone, Connection connection){
+    public void addDoctor(Telephone telephone, Connection connection){
         // codigo mysql atraves do java
     }
 
-    public void add(Service service, Connection connection){
+    public void addDoctor(Service service, Connection connection){
         // codigo mysql atraves do java
     }
 }

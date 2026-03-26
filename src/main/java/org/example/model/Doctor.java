@@ -57,4 +57,12 @@ public class Doctor {
         Service service = new Service(doctor_id, patient_id, date);
         services.add(service);
     }
+
+    @Override
+    public String toString() {
+        return "Doctor: " +
+                "id: " + id +
+                ", name: " + name + '\'' +
+                ", crm: " + crm;
+    }
 }
