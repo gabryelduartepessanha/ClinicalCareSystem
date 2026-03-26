@@ -1,16 +1,16 @@
 package org.example.model;
 
-public class Atendimento {
+public class Service {
     private Integer id;
-    private Integer medico_id;
-    private Integer paciente_id;
-    private String data;
+    private Integer doctor_id;
+    private Integer patient_id;
+    private String date;
 
-    public Atendimento(Integer medico_id, Integer paciente_id, String data) {
+    public Service(Integer doctor_id, Integer patient_id, String date) {
         this.id = 0;
-        this.medico_id = medico_id;
-        this.paciente_id = paciente_id;
-        this.data = data;
+        this.doctor_id = doctor_id;
+        this.patient_id = patient_id;
+        this.date = date;
     }
 
     public Integer getId() {
@@ -21,37 +21,37 @@ public class Atendimento {
         this.id = id;
     }
 
-    public Integer getMedico_id() {
-        return medico_id;
+    public Integer getDoctor_id() {
+        return doctor_id;
     }
 
-    public void setMedico_id(Integer medico_id) {
-        this.medico_id = medico_id;
+    public void setDoctor_id(Integer doctor_id) {
+        this.doctor_id = doctor_id;
     }
 
-    public Integer getPaciente_id() {
-        return paciente_id;
+    public Integer getPatient_id() {
+        return patient_id;
     }
 
-    public void setPaciente_id(Integer paciente_id) {
-        this.paciente_id = paciente_id;
+    public void setPatient_id(Integer patient_id) {
+        this.patient_id = patient_id;
     }
 
-    public String getData() {
-        return data;
+    public String getDate() {
+        return date;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     @Override
     public String toString() {
         return "Atendimento{" +
                 "id=" + id +
-                ", medico_id=" + medico_id +
-                ", paciente_id=" + paciente_id +
-                ", data='" + data + '\'' +
+                ", medico_id=" + doctor_id +
+                ", paciente_id=" + patient_id +
+                ", data='" + date + '\'' +
                 '}';
     }
 }

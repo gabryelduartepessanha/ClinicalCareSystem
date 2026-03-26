@@ -1,18 +1,25 @@
 package org.example.model;
 
+import javax.print.Doc;
 import java.util.ArrayList;
 
-public class Medico {
+public class Doctor {
     private Integer id;
-    private String nome;
+    private String name;
     private String crm;
-    private ArrayList<Atendimento> atendimentos;
+    private ArrayList<Service> services;
 
-    public Medico(String nome, String crm) {
+    public Doctor(){
         this.id = 0;
-        this.nome = nome;
+        this.name = "";
+        this.crm = "";
+    }
+
+    public Doctor(String name, String crm) {
+        this.id = 0;
+        this.name = name;
         this.crm = crm;
-        this.atendimentos = new ArrayList<>();
+        this.services = new ArrayList<>();
     }
 
     public Integer getId() {
@@ -23,12 +30,12 @@ public class Medico {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCrm() {
@@ -39,16 +46,15 @@ public class Medico {
         this.crm = crm;
     }
 
-    public ArrayList<Atendimento> getAtendimentos() {
-        return atendimentos;
+    public ArrayList<Service> getServices() {
+        return services;
+    }
+    public void setServices(ArrayList<Service> services) {
+        this.services = services;
     }
 
-    public void setAtendimentos(ArrayList<Atendimento> atendimentos) {
-        this.atendimentos = atendimentos;
-    }
-
-    public void addAtendimento(int medico_id, int paciente_id, String data){
-        Atendimento atendimento = new Atendimento(medico_id, paciente_id, data);
-        atendimentos.add(atendimento);
+    public void addService(int doctor_id, int patient_id, String date){
+        Service service = new Service(doctor_id, patient_id, date);
+        services.add(service);
     }
 }

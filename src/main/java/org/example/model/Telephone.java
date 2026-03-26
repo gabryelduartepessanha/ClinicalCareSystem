@@ -1,11 +1,11 @@
 package org.example.model;
 
-public class Telefone {
+public class Telephone {
     private Integer id;
-    private String numero;
+    private String phone_number;
 
-    public Telefone(String numero){
-        this.numero = numero;
+    public Telephone(String phone_number){
+        this.phone_number = phone_number;
     }
 
     public Integer getId() {
@@ -16,19 +16,19 @@ public class Telefone {
         this.id = id;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getPhone_number() {
+        return phone_number;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
     @Override
     public String toString(){
         return "Telefone{" +
                 "id= " + id +
-                ", numero= " + numero + '\'' +
+                ", numero= " + phone_number + '\'' +
                 '}';
     }
 }

@@ -2,38 +2,38 @@ package org.example.model;
 
 import java.util.ArrayList;
 
-public class Paciente {
+public class Patient {
     private Integer id;
-    private String nome;
+    private String name;
     private String cpf;
     private ArrayList<Telephone> telephones;
-    private Address endereco;
+    private Address address;
     private ArrayList<Service> services;
 
-    public Paciente(String nome, String cpf) {
+    public Patient(String name, String cpf) {
         this.id = 0;
-        this.nome = nome;
+        this.name = name;
         this.cpf = cpf;
         this.telephones = new ArrayList<>();
-        this.endereco = new Address();
+        this.address = new Address();
         this.services = new ArrayList<>();
     }
 
-    public Paciente(String nome, String cpf, String rua, String bairro, int numero) {
+    public Patient(String name, String cpf, String rua, String bairro, int numero) {
         this.id = 0;
-        this.nome = nome;
+        this.name = name;
         this.cpf = cpf;
         this.telephones = new ArrayList<>();
-        this.endereco = new Address(rua, bairro, numero);
+        this.address = new Address(rua, bairro, numero);
         this.services = new ArrayList<>();
     }
 
-    public Paciente(String nome, String cpf, String rua, String bairro, int numero, ArrayList<Telephone> telephones) {
+    public Patient(String name, String cpf, String rua, String bairro, int numero, ArrayList<Telephone> telephones) {
         this.id = 0;
-        this.nome = nome;
+        this.name = name;
         this.cpf = cpf;
         this.telephones = new ArrayList<>();
-        this.endereco = new Address(rua, bairro, numero);
+        this.address = new Address(rua, bairro, numero);
         this.services = new ArrayList<>();
     }
 
@@ -45,12 +45,12 @@ public class Paciente {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCpf() {
@@ -61,41 +61,41 @@ public class Paciente {
         this.cpf = cpf;
     }
 
-    public ArrayList<Telephone> getTelefones() {
+    public ArrayList<Telephone> getTelephones() {
         return telephones;
     }
 
-    public void setTelefones(ArrayList<Telephone> telephones) {
+    public void setTelephones(ArrayList<Telephone> telephones) {
         this.telephones = telephones;
     }
 
-    public Address getEndereco() {
-        return endereco;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setEndereco(Address endereco) {
-        this.endereco = endereco;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
-    public ArrayList<Service> getAtendimentos() {
+    public ArrayList<Service> getServices() {
         return services;
     }
 
-    public void setAtendimentos(ArrayList<Service> services) {
+    public void setServices(ArrayList<Service> services) {
         this.services = services;
     }
 
-    public void addTelefone(String telefone){
-        Telephone t = new Telephone(telefone);
+    public void addTelephone(String telephone){
+        Telephone t = new Telephone(telephone);
         telephones.add(t);
     }
 
-    public void addEndereco(String rua, String bairro, int numero){
-        this.endereco = new Address(rua, bairro, numero);
+    public void addAdress(String road, String neighborhood, int number){
+        this.address = new Address(road, neighborhood, number);
     }
 
-    public void addAtendimento(int medico_id, int paciente_id, String data){
-        Service service = new Service(medico_id, paciente_id, data);
+    public void addServices(int doctor_id, int patient_id, String date){
+        Service service = new Service(doctor_id, patient_id, date);
         services.add(service);
     }
 
@@ -103,10 +103,10 @@ public class Paciente {
     public String toString() {
         return "Paciente{" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
+                ", nome='" + name + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", telefones=" + telephones +
-                ", endereco=" + endereco +
+                ", endereco=" + address +
                 ", atendimentos=" + services +
                 '}';
     }

@@ -1,23 +1,23 @@
 package org.example.model;
 
-public class Endereco {
+public class Address {
     private Integer id;
-    private String rua;
-    private String bairro;
-    private Integer numero;
+    private String road;
+    private String neighborhood;
+    private Integer number;
 
-    public Endereco() {
+    public Address() {
         this.id = 0;
-        this.rua = "";
-        this.bairro = "";
-        this.numero = 0;
+        this.road = "";
+        this.neighborhood = "";
+        this.number = 0;
     }
 
-    public Endereco(String rua, String bairro, Integer numero) {
+    public Address(String road, String neighborhood, Integer number) {
         this.id = 0;
-        this.rua = rua;
-        this.bairro = bairro;
-        this.numero = numero;
+        this.road = road;
+        this.neighborhood = neighborhood;
+        this.number = number;
     }
 
     public Integer getId() {
@@ -28,37 +28,37 @@ public class Endereco {
         this.id = id;
     }
 
-    public String getRua() {
-        return rua;
+    public String getRoad() {
+        return road;
     }
 
-    public void setRua(String rua) {
-        this.rua = rua;
+    public void setRoad(String road) {
+        this.road = road;
     }
 
-    public String getBairro() {
-        return bairro;
+    public String getNeighborhood() {
+        return neighborhood;
     }
 
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
     }
 
-    public Integer getNumero() {
-        return numero;
+    public Integer getNumber() {
+        return number;
     }
 
-    public void setNumero(Integer numero) {
-        this.numero = numero;
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 
     @Override
     public String toString() {
         return "Endereco{" +
                 "id=" + id +
-                ", rua='" + rua + '\'' +
-                ", bairro='" + bairro + '\'' +
-                ", numero=" + numero +
+                ", rua='" + road + '\'' +
+                ", bairro='" + neighborhood + '\'' +
+                ", numero=" + number +
                 '}';
     }
 }
