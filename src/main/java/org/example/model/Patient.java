@@ -10,6 +10,14 @@ public class Patient {
     private Address address;
     private ArrayList<Service> services;
 
+    public Patient(){
+        this.id = 0;
+        this.name = name;
+        this.cpf = cpf;
+        this.telephones = new ArrayList<>();
+        this.address = new Address();
+    }
+
     public Patient(String name, String cpf) {
         this.id = 0;
         this.name = name;

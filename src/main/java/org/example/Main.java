@@ -1,11 +1,15 @@
 package org.example;
 
 import org.example.controller.Database;
+import org.example.model.Address;
 import org.example.model.Doctor;
+import org.example.model.Patient;
+import org.example.model.Telephone;
 
 import javax.print.Doc;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,22 +19,9 @@ public class Main {
         Connection connection = b.connect();
         Scanner sc = new Scanner(System.in);
 
-//        Doctor doctor1 = new Doctor("Gabryel Duarte", "0610");
-//        Doctor doctor2 = new Doctor("Ana Beatriz", "061020");
-//        b.addDoctor(doctor1, connection);
-//        b.add(doctor2, connection);
-//
-//        Doctor doctor1 = new Doctor("Gabryel Duarte", "1530");
-//        doctor1.setId(1);
-//        b.update(doctor1, connection);
+        Patient p = b.searchPatient("56", connection);
 
-        List<Doctor> doctors = b.searchAllDoctors(connection);
-
-        for(int i = 0; i<doctors.size(); i++){
-            Doctor m = doctors.get(i);
-
-            System.out.println(m.getId() + ", " + m.getName() + ", " + m.getCrm());
-        }
+        System.out.println(p.toString());
 
         b.disconnect(connection);
     }
